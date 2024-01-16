@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir, sans-serif;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+}
+
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+body { 		
+	font-family: Verdana, Arial, "sans serif";
+	font-size: 12px;		
+	color: #000000; 		
+	text-align: left;
+	margin: 0px;
+		background-image:url('mma.jpg');
+		background-size: cover; 
+		background-attachment: fixed; /* Pour fixer l'image en place pendant le défilement */
+		
+	}
+	
+h4 {
+	font-family: "Times new roman", Times, serif;
+	color: #000099;
+	font-size: 1.20em;
+	text-align: left;
+	margin-left: 150px;
+	}
+	
+fieldset {
+
+position: relative;
+border: 1px solid #090;
+margin: 10px; 		
+padding: 10px; 		
+background: #eee;
+}
+
+legend {
+top: -0.5em;
+margin-left: 10px;
+padding: 0px 10px;
+background: #9cf;
+font-weight : bold;
+border: 1px solid #090;
+-moz-border-radius: 10px;
+border-radius:10px;
+}
+	
+label { 
+	color: #009999;
+	font-size: 0.80em;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 10px;
+	}
+	
+textarea{
+		margin-left: 10px;
+		}
+		
+fieldset.boutonsradio
+	{
+	background-color: #DFDFFF;
+	border: 3px dotted #000099; 
+	text-align: center;
+	margin: 30px;	
+	margin-left: 200px;	
+	width:150px;  	
+	}
+	
+fieldset.boutonsradio legend { 
+	font-family: Tahoma, Arial, "sans serif";
+	font-size: 0.80em;		
+	color: #FFFFFF; 		
+	background: #80b0e0;
+	font-weight: bold;
+	}
+		
+p.note_explic { 
+	font-family: Verdana, Arial, "sans serif";
+	font-size: 0.72em;		
+	color: #000098; 		
+	font-weight: bold;
+	}
+	
+div.troiscol{ 
+	float: left;
+	width: 32%;
+	}
+	
+div.quatrecol{ 
+	float: left;
+	text-align: center;
+	width: 23%;
+	}
+	
+	fieldset.toto{
+		max-width: 1000px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
+		padding: 20px; /* Ajoutez de l'espace autour du contenu si nécessaire */
+		text-align: center;
+		color: white;
+		margin: 0 auto; /* Centrez le contenu horizontalement */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}

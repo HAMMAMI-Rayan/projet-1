@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir, sans-serif;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+}
+
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+body {
+    background-image:url('mma.jpg');
+    background-size: cover; 
+    background-attachment: fixed; /* Pour fixer l'image en place pendant le défilement */
+}
+
+.container {
+    max-width: 1000px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
+    padding: 20px; /* Ajoutez de l'espace autour du contenu si nécessaire */
+    text-align: center;
+    color: white;
+    margin: 0 auto; /* Centrez le contenu horizontalement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
