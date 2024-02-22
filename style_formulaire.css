@@ -127,7 +127,7 @@ div.quatrecol{
 	text-align: center;
 	width: 23%;
 	}
-	
+
 	fieldset.toto{
 		max-width: 1000px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
 		padding: 20px; /* Ajoutez de l'espace autour du contenu si nécessaire */
@@ -140,3 +140,10 @@ div.quatrecol{
 		align-items: center;
 		height: 100vh;
 	}
+
+	.centered-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
