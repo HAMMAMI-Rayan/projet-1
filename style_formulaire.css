@@ -46,9 +46,14 @@ body {
 	color: #000000; 		
 	text-align: left;
 	margin: 0px;
-		background-image:url('mma.jpg');
-		background-size: cover; 
-		background-attachment: fixed; /* Pour fixer l'image en place pendant le défilement */
+	margin: 0; /* Supprime les marges par défaut du navigateur */
+	padding: 0; /* Supprime les rembourrages par défaut du navigateur */
+	background-image: url('ufc\ 229.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+	background-size: cover; /* Couvrir tout l'espace disponible sans déformation */
+	background-repeat: no-repeat; /* Empêcher la répétition de l'image en arrière-plan */
+	background-position: center; /* Positionner l'image au centre de l'écran */
+
+	
 		
 	}
 	
@@ -61,13 +66,12 @@ h4 {
 	}
 	
 fieldset {
-
-position: relative;
-border: 1px solid #090;
-margin: 10px; 		
-padding: 10px; 		
-background:  #132b83;
-max-width: 1000px; 
+	position: relative;
+	border: 1px solid #090;
+	margin: 10px; 		
+	padding: 10px; 		
+	background:  #132b83;
+	max-width: 1000px; 
 }
 
 legend {
@@ -148,4 +152,12 @@ div.quatrecol{
 		align-items: center;
 
 	}
-	
+	img {
+		width: 60%;
+		height: auto;
+		margin-left: 15%;
+	}
+	fieldset.form{
+		margin-left: 10%;
+		margin-top: 5%;
+	}
