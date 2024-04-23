@@ -42,44 +42,34 @@ nav a:hover {
 }
 
 body {
-    margin: 0px;
 	margin: 0; /* Supprime les marges par défaut du navigateur */
 	padding: 0; /* Supprime les rembourrages par défaut du navigateur */
-	background-image: url('mma.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+	background-image: url('../image/mma.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
 	background-size: cover; /* Couvrir tout l'espace disponible sans déformation */
 	background-repeat: no-repeat; /* Empêcher la répétition de l'image en arrière-plan */
 	background-position: center; /* Positionner l'image au centre de l'écran */
-    color: white;
-    max-width: 600px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
+}
+
+.container {
+    max-width: 1000px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
     padding: 20px; /* Ajoutez de l'espace autour du contenu si nécessaire */
     text-align: center;
     color: white;
     margin: 0 auto; /* Centrez le contenu horizontalement */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-h2 {
-    color: red;
-    text-align: center;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 .centered-image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-img {
+
+img.accueil{
     width: 60%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
+	height: auto;
+	margin-left: 15%;
 }

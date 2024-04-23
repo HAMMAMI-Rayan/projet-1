@@ -5,7 +5,7 @@ CREATE TABLE utilisateurs (
     role ENUM('administrateur', 'utilisateur') NOT NULL
 );
 
-CREATE TABLE art_marcial(
+CREATE TABLE art_martial(
    id INT,
    nom VARCHAR(50),
    image VARCHAR(50),
@@ -14,56 +14,43 @@ CREATE TABLE art_marcial(
 
 CREATE TABLE categorie(
    id INT,
-   poids INT,
    nom VARCHAR(50),
-   PRIMARY KEY(id, poids)
+   poids INT NOT NULL,
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Combattant(
+   id INT,
+   nom VARCHAR(50),
+   prenom VARCHAR(50),
+   poids INT NOT NULL,
+   taille INT,
+   origine VARCHAR(50),
+   dateNaissance DATE,
+   nbDeVictoir INT,
+   nbDeVictoirParSoumission INT,
+   nbDeDefaite INT,
+   id_1 INT NOT NULL,
+   PRIMARY KEY(id),
+   FOREIGN KEY(id_1) REFERENCES categorie(id)
 );
 
 CREATE TABLE critiquer(
    id INT,
    commentaire VARCHAR(50),
-   PRIMARY KEY(id)
-);
-
-CREATE TABLE technique(
-   id INT,
-   nom VARCHAR(50),
    id_1 INT NOT NULL,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES art_marcial(id)
-);
-
-CREATE TABLE Combattant(
-   id INT,
-   poids INT,
-   nom VARCHAR(50),
-   prenom VARCHAR(50),
-   tails INT,
-   origine VARCHAR(50),
-   age INT,
-   Nombre_de_victoir INT,
-   Nombre_de_victoir_par_soumition INT,
-   Nombre_de_défaite INT,
-   id_1 INT NOT NULL,
-   poids_1 INT NOT NULL,
-   PRIMARY KEY(id, poids),
-   FOREIGN KEY(id_1, poids_1) REFERENCES categorie(id, poids)
+   FOREIGN KEY(id_1) REFERENCES Combattant(id)
 );
 
 CREATE TABLE pratiquer(
    id INT,
-   poids INT,
    id_1 INT,
-   PRIMARY KEY(id, poids, id_1),
-   FOREIGN KEY(id, poids) REFERENCES Combattant(id, poids),
-   FOREIGN KEY(id_1) REFERENCES art_marcial(id)
+   PRIMARY KEY(id, id_1),
+   FOREIGN KEY(id) REFERENCES Combattant(id),
+   FOREIGN KEY(id_1) REFERENCES art_martial(id)
 );
 
-CREATE TABLE commentair(
-   id INT,
-   poids INT,
-   id_1 INT,
-   PRIMARY KEY(id, poids, id_1),
-   FOREIGN KEY(id, poids) REFERENCES Combattant(id, poids),
-   FOREIGN KEY(id_1) REFERENCES critiquer(id)
-);
+INSERT INTO Combattant VALUES (1, 'McGregor', 'Conor', 155, 175, 'Irlande', '1988-07-14', 22, 5, 6, 1);
+INSERT INTO Combattant VALUES (2, 'Nurmagomedov', 'Khabib', 170, 178, 'Russie', '1988-09-20', 29, 10, 0, 1);
+INSERT INTO Combattant VALUES (3, 'Makhachev', 'Islam', 155, 177, 'Russie', '1991-09-27', 21, 10, 2, 1);

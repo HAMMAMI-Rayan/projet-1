@@ -48,7 +48,7 @@ body {
 	margin: 0px;
 	margin: 0; /* Supprime les marges par défaut du navigateur */
 	padding: 0; /* Supprime les rembourrages par défaut du navigateur */
-	background-image: url('imagePour-Inpriction.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+	background-image: url('../image/imagePour-Inpriction.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
 	background-size: cover; /* Couvrir tout l'espace disponible sans déformation */
 	background-repeat: no-repeat; /* Empêcher la répétition de l'image en arrière-plan */
 	background-position: center; /* Positionner l'image au centre de l'écran */
