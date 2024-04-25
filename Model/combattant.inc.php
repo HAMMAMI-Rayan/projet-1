@@ -1,5 +1,5 @@
 <?php
-$serveur = "ec2-54-196-221-37.compute-1.amazonaws.com";
+$serveur = "ec2-3-95-15-204.compute-1.amazonaws.com";
 $utilisateur = "root";
 $mot_de_passe = "";
 $base_de_donnees = "MMA";
