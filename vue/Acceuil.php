@@ -22,7 +22,7 @@
 
         <nav class="navbar">
             <a href="Acceuil.php">Accueil</a>
-            <a href="tableau.php">Combattant</a>
+            <a href="Tableau.php">Combattant</a>
             <?php
             if (isset($_SESSION['identifiant'])) {
                 echo '<a href="mon_compte.php">Mon Compte</a>';
