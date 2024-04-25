@@ -43,29 +43,3 @@ CREATE TABLE Combattant(
 INSERT INTO Combattant VALUES (1, 'McGregor', 'Conor', 35, 155, 175, 'Irlande', "KickBoxing" ,"Léger",'19-1-1');
 INSERT INTO Combattant VALUES (2, 'Nurmagomedov', 'Khabib', 35, 170, 178, 'Russie', "Sambo" , "Léger", '29-0-0');
 INSERT INTO Combattant VALUES (3, 'Makhachev', 'Islam', 32, 155, 177, 'Russie', "Sambo" , "Léger" , '25-1-0');
-
-
-
-
-drop table pratiquer ;
-drop table critiquer ;
-drop table Combattant ;
-drop table categorie ;
-drop table art_martial;
-
-
-CREATE TABLE critiquer(
-   id INT,
-   commentaire VARCHAR(50),
-   id_1 INT NOT NULL,
-   PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES Combattant(id)
-);
-
-CREATE TABLE pratiquer(
-   id INT,
-   id_1 INT,
-   PRIMARY KEY(id, id_1),
-   FOREIGN KEY(id) REFERENCES Combattant(id),
-   FOREIGN KEY(id_1) REFERENCES art_martial(id)
-);
