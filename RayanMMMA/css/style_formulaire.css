@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir, sans-serif;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+}
+
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+body { 		
+	font-family: Verdana, Arial, "sans serif";
+	font-size: 12px;		
+	color: #000000; 		
+	text-align: left;
+	margin: 0px;
+	margin: 0; /* Supprime les marges par défaut du navigateur */
+	padding: 0; /* Supprime les rembourrages par défaut du navigateur */
+	background-image: url('../image/imagePour-Inpriction.jpg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+	background-size: cover; /* Couvrir tout l'espace disponible sans déformation */
+	background-repeat: no-repeat; /* Empêcher la répétition de l'image en arrière-plan */
+	background-position: center; /* Positionner l'image au centre de l'écran */
+
+	
+		
+	}
+	
+h4 {
+	font-family: "Times new roman", Times, serif;
+	color: #000099;
+	font-size: 1.20em;
+	text-align: left;
+	margin-left: 150px;
+	}
+	
+fieldset {
+	position: relative;
+	border: 1px solid #090;
+	margin: 10px; 		
+	padding: 10px; 		
+	background:  #132b83;
+	max-width: 1000px; 
+}
+
+legend {
+top: -0.5em;
+margin-left: 40px;
+padding: 0px 10px;
+background: white;
+font-weight : bold;
+border: 1px solid #090;
+-moz-border-radius: 10px;
+border-radius:10px;
+}
+	
+label { 
+	color: #ffffff;
+	font-size: 0.80em;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 10px;
+	}
+	
+textarea{
+		margin-left: 10px;
+		}
+		
+fieldset.boutonsradio
+	{
+	background-color: #DFDFFF;
+	border: 3px dotted #000099; 
+	text-align: center;
+	margin: 30px;	
+	margin-left: 200px;	
+	width:150px;  	
+	}
+	
+fieldset.boutonsradio legend { 
+	font-family: Tahoma, Arial, "sans serif";
+	font-size: 0.80em;		
+	color: #FFFFFF; 		
+	background: #80b0e0;
+	font-weight: bold;
+	}
+		
+p.note_explic { 
+	font-family: Verdana, Arial, "sans serif";
+	font-size: 0.72em;		
+	color: #000098; 		
+	font-weight: bold;
+	}
+	
+div.troiscol{ 
+	float: left;
+	width: 32%;
+	}
+	
+div.quatrecol{ 
+	float: left;
+	text-align: center;
+	width: 23%;
+	}
+
+	fieldset.toto{
+		max-width: 1000px; /* Définissez la largeur maximale que vous souhaitez pour le contenu */
+		padding: 20px; /* Ajoutez de l'espace autour du contenu si nécessaire */
+		text-align: center;
+		color: white;
+		margin: 0 auto; /* Centrez le contenu horizontalement */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.centered-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+	img {
+		width: 60%;
+		height: auto;
+		margin-left: 15%;
+	}
+	fieldset.form{
+		margin-left: 10%;
+		margin-top: 5%;
+	}
