@@ -1,3 +1,4 @@
+
 CREATE TABLE utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom_utilisateur VARCHAR(50) UNIQUE NOT NULL,
@@ -21,7 +22,7 @@ CREATE TABLE categorie(
    poids INT NOT NULL
 );
 
-INSERT INTO categorie VALUES ("Léger" , 70);
+INSERT INTO categorie VALUES ("Leger" , 70);
 
 
 
@@ -40,6 +41,6 @@ CREATE TABLE Combattant(
    FOREIGN KEY (CategorieCombattant) REFERENCES categorie(CategorieCombattant)
 );
 
-INSERT INTO Combattant VALUES (1, 'McGregor', 'Conor', 35, 155, 175, 'Irlande', "KickBoxing" ,"Léger",'19-1-1');
-INSERT INTO Combattant VALUES (2, 'Nurmagomedov', 'Khabib', 35, 170, 178, 'Russie', "Sambo" , "Léger", '29-0-0');
-INSERT INTO Combattant VALUES (3, 'Makhachev', 'Islam', 32, 155, 177, 'Russie', "Sambo" , "Léger" , '25-1-0');
+INSERT INTO Combattant VALUES (1, 'McGregor', 'Conor', 35, 155, 175, 'Irlande', "KickBoxing" ,"Leger",'19-1-1');
+INSERT INTO Combattant VALUES (2, 'Nurmagomedov', 'Khabib', 35, 170, 178, 'Russie', "Sambo" , "Leger", '29-0-0');
+INSERT INTO Combattant VALUES (3, 'Makhachev', 'Islam', 32, 155, 177, 'Russie', "Sambo" , "Leger" , '25-1-0');

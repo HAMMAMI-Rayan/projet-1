@@ -64,30 +64,56 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                include '../Model/combattant.inc.php';
+            <?php
 
-                if (mysqli_num_rows($resultat) > 0) {
-                    while ($row = mysqli_fetch_assoc($resultat)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['nom'] . "</td>";
-                        echo "<td>" . $row['prenom'] . "</td>";
-                        echo "<td>" . $row['age'] . "</td>";
-                        echo "<td>" . $row['poids'] . "</td>";
-                        echo "<td>" . $row['taille'] . "</td>";
-                        echo "<td>" . $row['origine'] . "</td>";
-                        echo "<td>" . $row['Bilan'] . "</td>";
-                        echo "<td>" . $row['nom_art_martial'] . "</td>";
-                        echo "<td>" . $row['categorie_combattant'] . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "Aucun combattant trouvé dans la base de données.";
-                }
+include '../Model/combattant.inc.php';
+// Ajouter un combattant
+if (isset($_POST['ajouter'])) {
+    ajouterCombattant($connexion, $_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['poids'], $_POST['taille'], $_POST['origine'], $_POST['bilan'], $_POST['art_martial']);
+    header("Location: Tableau.php");
+}
 
-                mysqli_free_result($resultat);
-                mysqli_close($connexion);
-                ?>
+// Modifier un combattant
+if (isset($_POST['modifier'])) {
+    modifierCombattant($connexion, $_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['poids'], $_POST['taille'], $_POST['origine'], $_POST['bilan'], $_POST['art_martial']);
+    header("Location: Tableau.php");
+}
+
+// Supprimer un combattant
+if (isset($_GET['supprimer'])) {
+    supprimerCombattant($connexion, $_GET['supprimer']);
+    header("Location: Tableau.php");
+}
+
+    if (mysqli_num_rows($resultat) > 0) {
+        while ($row = mysqli_fetch_assoc($resultat)) {
+            echo "<tr>";
+            echo "<td>" . $row['nom'] . "</td>";
+            echo "<td>" . $row['prenom'] . "</td>";
+            echo "<td>" . $row['age'] . "</td>";
+            echo "<td>" . $row['poids'] . "</td>";
+            echo "<td>" . $row['taille'] . "</td>";
+            echo "<td>" . $row['origine'] . "</td>";
+            echo "<td>" . $row['Bilan'] . "</td>";
+            echo "<td>" . $row['nom_art_martial'] . "</td>";
+            echo "<td>" . $row['categorie_combattant'] . "</td>";
+
+            // Modifier un combattant
+            echo "<td><a href='modifier.php?id=" . $row['id'] . "'>Modifier</a></td>";
+
+            // Supprimer un combattant
+            echo "<td><a href='Tableau.php?supprimer=" . $row['id'] . "' onclick='return confirm(\"Supprimer ce combattant ?\")'>Supprimer</a></td>";
+
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='10'>Aucun combattant trouvé dans la base de données.</td></tr>";
+    }
+
+    mysqli_free_result($resultat);
+    mysqli_close($connexion);
+    ?>
+
             </tbody>
         </table>
     </div>
