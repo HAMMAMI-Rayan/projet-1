@@ -23,12 +23,16 @@ if (!$resultat) {
 }
 
 // Fonction pour ajouter un combattant
-function ajouterCombattant($connexion, $nom, $prenom, $age, $poids, $taille, $origine, $bilan, $art_martial) {
-    $sql = "INSERT INTO combattant (nom, prenom, age, poids, taille, origine, bilan, nomArtMartial) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+function ajouterCombattant($connexion, $nom, $prenom, $age, $poids, $taille, $origine, $bilan, $art_martial, $categorie) {
+    $sql = "INSERT INTO Combattant (nom, prenom, age, poids, taille, origine, Bilan, nomArtMartial, CategorieCombattant) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
     $stmt = mysqli_prepare($connexion, $sql);
-    mysqli_stmt_bind_param($stmt, "ssiissss", $nom, $prenom, $age, $poids, $taille, $origine, $bilan, $art_martial);
-    return mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_param($stmt, "ssiiissss", $nom, $prenom, $age, $poids, $taille, $origine, $bilan, $art_martial, $categorie);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 }
+
 
 // Fonction pour modifier un combattant
 function modifierCombattant($connexion, $id, $nom, $prenom, $age, $poids, $taille, $origine, $bilan, $art_martial) {

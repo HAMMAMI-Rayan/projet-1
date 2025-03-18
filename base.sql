@@ -41,6 +41,8 @@ CREATE TABLE Combattant(
    FOREIGN KEY (CategorieCombattant) REFERENCES categorie(CategorieCombattant)
 );
 
+ALTER TABLE Combattant MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT;
+
 INSERT INTO Combattant VALUES (1, 'McGregor', 'Conor', 35, 155, 175, 'Irlande', "KickBoxing" ,"Leger",'19-1-1');
 INSERT INTO Combattant VALUES (2, 'Nurmagomedov', 'Khabib', 35, 170, 178, 'Russie', "Sambo" , "Leger", '29-0-0');
 INSERT INTO Combattant VALUES (3, 'Makhachev', 'Islam', 32, 155, 177, 'Russie', "Sambo" , "Leger" , '25-1-0');

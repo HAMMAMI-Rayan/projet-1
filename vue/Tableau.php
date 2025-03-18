@@ -32,7 +32,7 @@
         <nav class="navbar">
             <a href="Acceuil.php">Accueil</a>
             <a href="tableau.php">Combattant</a>
-            <?php
+            <?php     
             if (isset($_SESSION['identifiant'])) {
                 echo '<a href="mon_compte.php">Mon Compte</a>';
             } else {
@@ -45,6 +45,7 @@
             </form>
         </nav>
     </header>
+    
 
     <div class="tab">
         <h1>Tableau des Combattants MMA</h1>
@@ -69,15 +70,41 @@
 include '../Model/combattant.inc.php';
 // Ajouter un combattant
 if (isset($_POST['ajouter'])) {
-    ajouterCombattant($connexion, $_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['poids'], $_POST['taille'], $_POST['origine'], $_POST['bilan'], $_POST['art_martial']);
+    ajouterCombattant(
+        $connexion,
+        $_POST['nom'],
+        $_POST['prenom'],
+        $_POST['age'],
+        $_POST['poids'],
+        $_POST['taille'],
+        $_POST['origine'],
+        $_POST['bilan'],
+        $_POST['art_martial'],
+        $_POST['categorie']
+    );
     header("Location: Tableau.php");
+    exit();
 }
+
 
 // Modifier un combattant
 if (isset($_POST['modifier'])) {
-    modifierCombattant($connexion, $_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['poids'], $_POST['taille'], $_POST['origine'], $_POST['bilan'], $_POST['art_martial']);
+    modifierCombattant(
+        $connexion, 
+        $_POST['id'], 
+        $_POST['nom'], 
+        $_POST['prenom'], 
+        $_POST['age'], 
+        $_POST['poids'], 
+        $_POST['taille'], 
+        $_POST['origine'], 
+        $_POST['bilan'], 
+        $_POST['art_martial']
+    );
     header("Location: Tableau.php");
+    exit();
 }
+
 
 // Supprimer un combattant
 if (isset($_GET['supprimer'])) {
@@ -88,27 +115,27 @@ if (isset($_GET['supprimer'])) {
     if (mysqli_num_rows($resultat) > 0) {
         while ($row = mysqli_fetch_assoc($resultat)) {
             echo "<tr>";
-            echo "<td>" . $row['nom'] . "</td>";
-            echo "<td>" . $row['prenom'] . "</td>";
-            echo "<td>" . $row['age'] . "</td>";
-            echo "<td>" . $row['poids'] . "</td>";
-            echo "<td>" . $row['taille'] . "</td>";
-            echo "<td>" . $row['origine'] . "</td>";
-            echo "<td>" . $row['Bilan'] . "</td>";
-            echo "<td>" . $row['nom_art_martial'] . "</td>";
-            echo "<td>" . $row['categorie_combattant'] . "</td>";
-
-            // Modifier un combattant
-            echo "<td><a href='modifier.php?id=" . $row['id'] . "'>Modifier</a></td>";
-
-            // Supprimer un combattant
-            echo "<td><a href='Tableau.php?supprimer=" . $row['id'] . "' onclick='return confirm(\"Supprimer ce combattant ?\")'>Supprimer</a></td>";
-
+            echo "<form method='post'>";
+            echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
+            echo "<td><input type='text' name='nom' value='" . $row['nom'] . "'></td>";
+            echo "<td><input type='text' name='prenom' value='" . $row['prenom'] . "'></td>";
+            echo "<td><input type='number' name='age' value='" . $row['age'] . "'></td>";
+            echo "<td><input type='number' name='poids' value='" . $row['poids'] . "'></td>";
+            echo "<td><input type='number' name='taille' value='" . $row['taille'] . "'></td>";
+            echo "<td><input type='text' name='origine' value='" . $row['origine'] . "'></td>";
+            echo "<td><input type='text' name='bilan' value='" . $row['Bilan'] . "'></td>";
+            echo "<td><input type='text' name='art_martial' value='" . $row['nom_art_martial'] . "'></td>";
+            echo "<td>";
+            echo "<button type='submit' name='modifier'>Modifier</button>";
+            echo "<a href='Tableau.php?supprimer=" . $row['id'] . "' onclick='return confirm(\"Supprimer ce combattant ?\");'>Supprimer</a>";
+            echo "</td>";
+            echo "</form>";
             echo "</tr>";
         }
     } else {
         echo "<tr><td colspan='10'>Aucun combattant trouvé dans la base de données.</td></tr>";
     }
+
 
     mysqli_free_result($resultat);
     mysqli_close($connexion);
@@ -116,6 +143,33 @@ if (isset($_GET['supprimer'])) {
 
             </tbody>
         </table>
+        <form method="post">
+    <tr>
+        <td><input type="text" name="nom" required></td>
+        <td><input type="text" name="prenom" required></td>
+        <td><input type="number" name="age" required></td>
+        <td><input type="number" name="poids" required></td>
+        <td><input type="number" name="taille" required></td>
+        <td><input type="text" name="origine" required></td>
+        <td><input type="text" name="bilan" required></td>
+        <td>
+            <select name="art_martial" required>
+                <option value="KickBoxing">KickBoxing</option>
+                <option value="Sambo">Sambo</option>
+            </select>
+        </td>
+        <td>
+            <select name="categorie" required>
+                <option value="Leger">Léger</option>
+            </select>
+        </td>
+        <td>
+            <button type="submit" name="ajouter">Ajouter</button>
+        </td>
+    </tr>
+</form>
+
+
     </div>
 </body>
 
