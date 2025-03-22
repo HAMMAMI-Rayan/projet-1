@@ -23,10 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['loggedin'] = true; 
         $_SESSION['identifiant'] = $identifiant;
+        
+        // Récupérer le rôle de l'utilisateur
+        $user = mysqli_fetch_assoc($resultat);
+        $_SESSION['role'] = $user['role'];
+        
         header("Location: ../vue/Acceuil.php"); 
         exit; 
     } else {
-        echo "Identifiant ou mot de passe incorrect.";
+        // Rediriger vers la page de connexion avec un message d'erreur
+        header("Location: ../vue/login.php?error=1");
+        exit;
     }
 
     mysqli_free_result($resultat);

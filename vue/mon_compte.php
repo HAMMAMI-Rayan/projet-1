@@ -64,7 +64,7 @@ mysqli_close($connexion);
 
 <body>
     <header class="header">
-        <a href="Acceuil.php" class="logo">PUGILAT FR</a>
+        <a href="Acceuil.php" class="logo">MMA Web Fan</a>
 
         <nav class="navbar">
             <a href="Acceuil.php">Accueil</a>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>B. Movies</title>
+    <title>MMA web fan</title>
     <link rel="stylesheet" type="text/css" href="../css/Acceuil.css">
     <style>
         .logo {
@@ -18,7 +18,7 @@
 
 <body>
     <header class="header">
-        <a href="Acceuil.php" class="logo">PUGILAT FR</a>
+        <a href="Acceuil.php" class="logo">MMA Web Fan</a>
 
         <nav class="navbar">
             <a href="Acceuil.php">Accueil</a>
